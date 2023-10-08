@@ -1,0 +1,127 @@
+﻿body {
+    font-family: Georgia, sans-serif;
+    margin: 0; /* 移除默认的外边距 */
+    color: rgb(15, 255, 255); /* 设置字体颜色 */
+    overflow: hidden; /* 隐藏滚动条，防止视频背景出现滚动 */
+}
+
+#video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000; /* 确保视频位于内容的下方 */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+#container {
+    position: relative;
+    z-index: 1; /* 确保内容位于视频的上方 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* 确保文本也居中 */
+}
+
+#logo {
+    font-family: STHupo, sans-serif;
+    margin-top: 50px;
+    font-size: 48px;
+    color: rgb(59, 180, 228);
+}
+
+#input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* 添加间隙 */
+    margin-top: 20px; /* 调整顶部的间隙 */
+}
+
+#confirm-button, #try-again-button {
+    margin-top: 10px; /* 调整按钮的间隙 */
+}
+
+#game-title {
+    font-size: 36px;
+    font-family: STXingkai, sans-serif;
+    color: rgb(59, 180, 228)
+}
+#recommendations {
+    text-align: center;
+}
+
+#games-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.game-group {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto; /* center .game-group within #games-list */
+}
+
+#game-display {
+    position: relative;
+    width: 700px; /* 根据需要设置宽度 */
+    margin: auto;
+    overflow: hidden; /* 隐藏溢出的内容 */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* 添加切换动画 */
+}
+
+    .carousel div {
+        min-width: 100%; /* 确保每个div占据全部宽度 */
+        box-sizing: border-box;
+    }
+
+#prev-button, #next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* 添加背景颜色以增加可见性 */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+/*调整button位置*/
+#prev-button {
+    left: 5%;
+}
+
+#next-button {
+    right: 5%;
+}
+
+/* 新添加的样式，设置图片和游戏名字的样式 */
+.carousel img {
+    width: 90%; /* 或者指定固定宽度，例如 width: 300px; */
+    height: 90%; /* 或者指定固定高度，例如 height: 200px; */
+    object-fit: cover; /* 保持图片的宽高比，同时填充容器 */
+    border: none; /* 添加一个白色边框 */
+    border-radius: 10px; /* (可选)为图片添加圆角 */
+}
+
+.carousel p {
+    text-align: center; /* 文本居中 */
+    margin: 10px 0; /* 设置上下边距 */
+}
+
+#error-message {
+    color: red;
+    font-weight: bold;
+}
